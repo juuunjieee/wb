@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmspool-config>
+
+  <!-- 
+    jmspool的name属性唯一指定一个jms连接池的名字
+    参数含义：
+    username： 生成jms连接的用户名
+    password ：生成jms连接的用户名密码
+    idleTimeout：连接在池子里的最大空闲时间 ，单位秒
+    maxConnections： 池子里分配的jms连接数
+    maximumActive： 每个jms连接缓存的最大session数
+   -->
+  <jmspool name="default" > 
+    <property name="url">tcp://localhost:61616</property>
+    <property name="username">DEFAULT_USER</property>
+    <property name="password">DEFAULT_PASSWORD</property>
+    <property name="idleTimeout">120</property>
+    <property name="maxConnections">8</property>
+    <property name="maximumActive">100</property>
+ 
+  </jmspool>
+  
+ </jmspool-config>

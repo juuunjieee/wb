@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbpool-config>
+  
+  <!--
+     每个dbpool配置对应一个连接池
+     
+  type属性：指定连接池c3p0或tomcatdbpool
+  driverClassName：数据库的驱动名称
+  url： 连接字符串
+  username：用户名
+  password：用户密码
+  checkoutTimeout：当数据库满时，等待从连接池里取出connection的最长时间，毫秒为单位
+  maxIdleTime ：最长空隙时间，以秒为单位，多于连接池里可容纳的最小connection数（由minPoolSize指定）的多余connection超过此时间，会被释放
+  maxPoolSize ：连接池可容纳connection的最大数
+  minPoolSize： 连接池可容纳的connection的最小数
+  idleConnectionTestPeriod: 空闲连接的检测时间，如果无效重连。此参数以秒为单位
+  maxStatements：缓存的statement数
+  -->
+  <dbpool name="yscf_mdb" type="tomcatdbpool">
+    <property name="driverClassName">com.mysql.jdbc.Driver</property>
+    <property name="url">jdbc:mysql://localhost:3306/yscf_mdb?useUnicode=true&amp;characterEncoding=utf-8</property>
+    <property name="username">root</property>
+    <property name="password">123456</property>
+    <property name="checkoutTimeout">60000</property>
+    <property name="idleConnectionTestPeriod">30</property>
+    <property name="maxIdleTime">60</property>
+    <property name="maxPoolSize">3</property>
+    <property name="minPoolSize">1</property>
+    <property name="maxStatements">20</property>
+
+  </dbpool>
+  <!--<dbpool name="yscf_mdb" type="tomcatdbpool">
+    <property name="driverClassName">com.mysql.jdbc.Driver</property>
+    <property name="url">jdbc:mysql://47.106.84.92:3306/yscf_mdb?useUnicode=true&amp;characterEncoding=utf-8</property>
+    <property name="username">root</property>
+    <property name="password">opls*JgLJbde#2y</property>
+    <property name="checkoutTimeout">60000</property>
+    <property name="idleConnectionTestPeriod">30</property>
+    <property name="maxIdleTime">60</property>
+    <property name="maxPoolSize">3</property>
+    <property name="minPoolSize">1</property>
+    <property name="maxStatements">20</property>
+
+  </dbpool>-->
+
+
+
+  
+</dbpool-config>
+

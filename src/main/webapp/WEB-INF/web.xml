@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         id="WebApp_ID" version="3.1">
+  <display-name>common</display-name>
+ 	 <listener>
+	    <listener-class>se.jiderhamn.classloader.leak.prevention.ClassLoaderLeakPreventorListener</listener-class>
+	</listener>
+  <listener>
+    <listener-class>com.ulwx.listener.ContextListener</listener-class>
+  </listener>
+    <listener>
+    <listener-class>com.ulwxbase.listener.InitListener</listener-class>
+  </listener>
+  <filter>
+    <filter-name>logFilter</filter-name>
+    <filter-class>com.ulwx.filter.LogFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>Encoding</filter-name>
+    <filter-class>com.ulwx.filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>encode</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  
+   <filter> 
+    <filter-name>debugFilter</filter-name>
+    <filter-class>com.ulwxbase.filter.DebugFilter</filter-class>
+    <init-param>
+      <param-name>userName</param-name>
+      <param-value>adminjyd100</param-value>
+    </init-param>
+    <init-param>
+      <param-name>userPass</param-name>
+      <param-value>GP8cHm5uevidec7iIZ5w8fIZPziIC4ZVHxGLGWtXqoDJ4MJuGX7slpf3vuB6SgO7jLhuYxESlJkLaAqpjKZ7IA==</param-value>
+    </init-param>
+  </filter>  
+  
+  <filter>
+    <filter-name>accessFilter</filter-name>
+    <filter-class>com.ulwx.filter.AccessFilter</filter-class>
+   <init-param>
+      <param-name>accessPlugin</param-name>
+      <param-value><!-- com.ulwxbase.filter.SessionFilter ,-->com.ulwxbase.filter.URLControlFilter,com.ulwxbase.filter.SignFilter</param-value>
+    </init-param> 
+    <init-param>
+      <param-name>LoginPage</param-name>
+      <param-value>index.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>UserSeesionKey</param-name>
+      <param-value>USER</param-value>
+    </init-param>
+    <init-param>
+      <param-name>AjaxURLSTR</param-name>
+      <param-value>JSON.action</param-value>
+    </init-param>
+    <init-param>
+      <param-name>AjaxMessagePage</param-name>
+      <param-value>json.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>MessagePage</param-name>
+      <param-value>message.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>MessagePageKey</param-name>
+      <param-value>Msg</param-value>
+    </init-param>
+    <init-param>
+      <param-name>MessagePageReturnURL</param-name>
+      <param-value>ReturnURL</param-value>
+    </init-param>
+    <init-param>
+      <param-name>NotFilterURLs</param-name>
+      <param-value>download.jsp,forward.jsp,redirect.jsp,forgetPassword.jsp,index.jsp,login.action,message.jsp,json.jsp,sys_Login_loginJSON.action,logout.action,sys_Login_checkUserPhoneJSON.action,sys_Login_checkSmsCodeJSON.action,sys_Login_savePasswordJSON.action,getMobileSmsJSON.action,sys_Login_authLogin.action</param-value>
+    </init-param>
+  </filter>
+<!--   <filter> -->
+<!--     <filter-name>XSSFilter</filter-name> -->
+<!--     <filter-class>com.ulwx.filter.XSSFilter</filter-class> -->
+<!--   </filter>  -->
+  <filter-mapping>
+    <filter-name>logFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter-mapping> 
+    <filter-name>debugFilter</filter-name>
+    <url-pattern>/jsp/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>debugFilter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>debugFilter</filter-name>
+    <url-pattern>/main.jsp</url-pattern>
+  </filter-mapping>  
+  
+  <filter-mapping>
+    <filter-name>accessFilter</filter-name>
+    <url-pattern>/jsp/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>accessFilter</filter-name>
+    <url-pattern>/main.jsp</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>accessFilter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Encoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+<filter>
+<filter-name>struts2</filter-name>
+	<filter-class>com.ulwxbase.web.action.utils.MyStrutsFilter</filter-class>
+</filter>
+<!-- <filter-mapping> -->
+<!--     <filter-name>XSSFilter</filter-name> -->
+<!--     <url-pattern>/*</url-pattern> -->
+<!--   </filter-mapping> -->
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+ <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping> 
+  <servlet>
+		<servlet-name>intf</servlet-name>
+		<servlet-class>com.ulwxframe.servlet.InterfaceServlet</servlet-class>
+
+		<multipart-config>
+            <max-file-size>52428800</max-file-size><!--50MB-->
+            <max-request-size>52428800</max-request-size><!--50MB-->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>intf</servlet-name>
+		<url-pattern>/intf/*</url-pattern>
+	</servlet-mapping>
+  <servlet>
+    <servlet-name>patchca</servlet-name>
+    <servlet-class>com.ulwx.servlets.CaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>patchca</servlet-name>
+    <url-pattern>/validcode</url-pattern>
+  </servlet-mapping>
+
+  <session-config>
+    <session-timeout>1440</session-timeout>
+ <!--     <cookie-config> -->
+<!--         <http-only>true</http-only> -->
+<!--         <secure>true</secure> -->
+<!--     </cookie-config> -->
+  </session-config>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+ <error-page>
+	<error-code>404</error-code> 
+    <location>/error/404/404.html</location>
+</error-page>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <trim-directive-whitespaces>true</trim-directive-whitespaces>
+    </jsp-property-group>
+  </jsp-config>
+</web-app>

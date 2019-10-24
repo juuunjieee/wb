@@ -1,0 +1,13 @@
+#定义common-base用到的表存在的数据库对应的连接池名称，对应dbpool里的连接池名称
+sys.dbpoolname=yscf_mdb
+
+#登录短信验证规则，如果login.sms.test.to指定了手机号码，则发送给指定的手机号，可以为"no"，不需要手机验证码验证
+login.sms.test.to=no
+#在login.sms.test.to=no有效，指定一个固定的手机验证码，登录时输入此验证码，测通过验证
+login.sms.no.smscode=123456
+#短信验证码发送插件类，通过此类发送短信
+login.sms.class=com.yscf.admin.utils.LogSmsImpl
+#登录时构造UserInfo里的extInfo字段，扩展com.ulwxbase.web.action.utils.LoginUserInfPlugin的实现
+login.userInf.plugin=com.yscf.admin.services.utils.LoginUserInfPluginImpl
+#前端登录密码rsa加密私钥
+private.key=MIIBVAIBADANBgkqhkiG9w0BAQEFAASCAT4wggE6AgEAAkEAi/52sB31O/1aBK72kQzcs9NskBDoJPgp1VVPHFn0BjyHRwNJ2V/MlmSO/WrsrtI+xqPCgTFd/h9BmXufQ4Q3AwIDAQABAkAY++DSrYYGnsBh9Zera1A4B5NoYpwLfP56RC9KMAOM2RwMqizZmAVmIdFl2gSYxkQxzn1T60kzJ1aq0KIN/zUBAiEA306hOO5Ky+xyELhYwKJtJrecVE3cWWc1K6ZrUHyxbjsCIQCgfVMmMsR6Obk+tvzuWecWIYf5h4sDOQww3j3nJVnl2QIgBGHAnCNg6Ft9aYKUi0MkrSvRL35Popl5259qX6vyt10CIAY3tL/3GYuOrvGSD0yAqSY/WFA/gxA15pYCFi3dUZVJAiEA127BTg/iYElzgIDzLJi32ZR/0/huE+nwCY9YwXrbW1w=

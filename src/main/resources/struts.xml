@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 配置文件上传大小上限，现今最大上限为50MB -->
+	<constant name="struts.multipart.maxSize" value="500971520"/>
+	<constant name="struts.action.excludePattern" value="/ueditor/jsp/.*" />  
+	<package name="base" extends="struts-default" abstract="true" >
+
+	    <interceptors>
+			<interceptor name="exception" class="com.ulwxbase.web.interceptor.ExceptionInterceptor" />
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="defaultStack" />	
+			</interceptor-stack>
+			
+			<interceptor-stack name="notAuthorityInterceptor">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+		<global-results>
+			<result name="error">/message.jsp</result>
+			<result name="json">/json.jsp</result>
+			<result name="message">/message.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="forward" >/forward.jsp</result>
+			<result name="redirect">/redirect.jsp</result>
+			<result name="download">/download.jsp</result>
+			<result name="main">/main.jsp</result>
+		    <result name="stream" type="stream">
+                <param name="bufferSize">4096</param>
+                <param name="contentType">${mimeType}</param>   
+				<param name="inputName">inStream</param>
+				<param name="contentDisposition">attachment;filename="${filename}"</param>
+             </result>
+		</global-results>
+	</package>
+	<!-- =============登录模块================== -->
+	<package name="sys" extends="base" namespace="/sys">
+	    <global-allowed-methods>regex:.*</global-allowed-methods>
+		<action name="login" class="com.ulwxbase.web.action.sys.LoginAction" method="login">
+			<interceptor-ref name="notAuthorityInterceptor"></interceptor-ref>
+			<result name="success">/main.jsp</result>
+			<result type="redirect"  name="error">/index.jsp</result>
+		</action>
+		<action name="logout" class="com.ulwxbase.web.action.sys.LoginAction" method="logout">
+			<interceptor-ref name="notAuthorityInterceptor"></interceptor-ref>
+			<result type="redirect" name="success">/index.jsp</result>
+		</action>
+	    <action name="*_*_*JSON" class="com.ulwxbase.web.action.{1}.{2}Action" method="{3}">
+			<result name="json">/json.jsp</result>
+		</action>
+		
+	    <action name="*_*_*" class="com.ulwxbase.web.action.{1}.{2}Action" method="{3}">
+			<result name="ok">/jsp/ulwxbase/{1}/{2}.jsp</result>
+			<result name="success">/jsp/ulwxbase/{1}/{2}_{3}.jsp</result>
+			<result name="next">/jsp/ulwxbase/{1}/${next}</result>
+		
+		</action>
+	</package> 
+
+
+	<!-- ===========================业务模块应用=========================== -->
+	<package name="main" extends="base" namespace="/sl">
+	        <global-allowed-methods>regex:.*</global-allowed-methods>
+		    <action name="*_*_*JSON" class="com.yscf.admin.web.action.{1}.{2}Action" method="{3}">
+				<result name="json">/json.jsp</result>
+			</action>
+			
+		    <action name="*_*_*" class="com.yscf.admin.web.action.{1}.{2}Action" method="{3}">
+				<result name="ok">/jsp/jydsoft/{1}/{2}.jsp</result>
+				<result name="success">/jsp/jydsoft/{1}/{2}_{3}.jsp</result>
+				<result name="next">/jsp/jydsoft/{1}/${next}</result>
+			</action>
+	</package> 
+	
+
+
+</struts>

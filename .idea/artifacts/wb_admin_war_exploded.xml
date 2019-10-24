@@ -1,0 +1,92 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="wb-admin:war exploded">
+    <output-path>$PROJECT_DIR$/target/wb-admin-0.0.1-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="wb-admin" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.11.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.11.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-slf4j-impl:2.11.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-jul:2.11.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-jcl:2.11.2" />
+          <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-1.2-api:2.11.2" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Maven: com.aliyun.oss:aliyun-sdk-oss:2.4.0" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.4.1" />
+          <element id="library" level="project" name="Maven: org.jdom:jdom:1.1" />
+          <element id="library" level="project" name="Maven: net.sf.json-lib:json-lib:jdk15:2.4" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:3.2.1" />
+          <element id="library" level="project" name="Maven: net.sf.ezmorph:ezmorph:1.0.6" />
+          <element id="library" level="project" name="Maven: org.apache.struts:struts2-core:2.5.20" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.28" />
+          <element id="library" level="project" name="Maven: ognl:ognl:3.1.21" />
+          <element id="library" level="project" name="Maven: org.javassist:javassist:3.20.0-GA" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.8.1" />
+          <element id="library" level="project" name="Maven: org.jyd100.common:common-database:1.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: com.mchange:c3p0:0.9.5.2" />
+          <element id="library" level="project" name="Maven: com.mchange:mchange-commons-java:0.2.11" />
+          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: jaxen:jaxen:1.1.6" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-jdbc:8.5.15" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-juli:8.5.15" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.43" />
+          <element id="library" level="project" name="Maven: org.jyd100.common:common-tool:1.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.6" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.61" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-text:1.1" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.6" />
+          <element id="library" level="project" name="Maven: uk.com.robust-it:cloning:1.9.4" />
+          <element id="library" level="project" name="Maven: org.objenesis:objenesis:2.1" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.9.3" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.5.9" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient-cache:4.5.9" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.12" />
+          <element id="library" level="project" name="Maven: commons-configuration:commons-configuration:1.10" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.14" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.1" />
+          <element id="library" level="project" name="Maven: com.belerweb:pinyin4j:2.5.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.9" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.9" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-math3:3.6" />
+          <element id="library" level="project" name="Maven: net.spy:spymemcached:2.12.3" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:3.16" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.1" />
+          <element id="library" level="project" name="Maven: net.sf.jxls:jxls-core:1.0.6" />
+          <element id="library" level="project" name="Maven: commons-digester:commons-digester:2.0" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-jexl:2.0.1" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.9" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:3.9" />
+          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:2.3.0" />
+          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:20.0" />
+          <element id="library" level="project" name="Maven: com.googlecode.libphonenumber:geocoder:2.119" />
+          <element id="library" level="project" name="Maven: com.googlecode.libphonenumber:libphonenumber:8.10.13" />
+          <element id="library" level="project" name="Maven: com.googlecode.libphonenumber:prefixmapper:2.119" />
+          <element id="library" level="project" name="Maven: com.googlecode.libphonenumber:carrier:1.109" />
+          <element id="library" level="project" name="Maven: org.jyd100.common:common-smssend:1.0.0-SNAPSHOT" />
+          <element id="library" level="project" name="Maven: patchca:patchca:0.5.0" />
+          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: com.auth0:java-jwt:3.0.1" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.41" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
+          <element id="library" level="project" name="Maven: se.jiderhamn.classloader-leak-prevention:classloader-leak-prevention-servlet:2.1.0" />
+          <element id="library" level="project" name="Maven: se.jiderhamn.classloader-leak-prevention:classloader-leak-prevention-core:2.1.0" />
+          <element id="library" level="project" name="Maven: ueditor-ext:ueditor-ext:1.4.3.3" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/wb-admin-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="wb-admin/web/Web" />
+    </root>
+  </artifact>
+</component>

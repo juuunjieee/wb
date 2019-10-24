@@ -1,0 +1,6 @@
+# 表名与javabean类名的转换规则，下划线转成驼峰结构，分：underline_to_camel，normal,first_letter_upcase两种，
+# underline_to_camel表示下划线转驼峰，normal为数据库表名和javabean一致，first_letter_upcase为数据库表名转为javabean后，第一个字母大写
+TableNameRule=underline_to_camel
+# 表字段与javabean属性的转换规则，下划线转成驼峰结构，分：underline_to_camel，normal两种，
+TableColumRule=underline_to_camel
+
